@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MusicWS.Models.Album>
+
+<article class="content-right boxRSL">
+    <header class="border-Bottom"><h2>@ViewBag.Message</h2></header>
+    <ul id="album-list">
+        @foreach (var e in Model)
+        {
+            string name = e.AnhBia;
+            if (e.AnhBia == null) { name = "NoImage.jpg"; }
+            <li>
+                <a href="@Url.Action("Album", "TrinhBay", new { id=e.AlbumId})">
+                    <img src="~/Photos/Album/@name " alt="@e.TenAlbum" />
+                    <span>@e.TenAlbum</span>
+                </a>
+            </li>
+        }
+    </ul>
+</article>

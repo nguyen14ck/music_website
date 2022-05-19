@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css","~/Content/FormStyle.css")
+    @Styles.Render("~/Content/css","~/Content/WebGridStyle.css")
+</head>
+<body>
+    @*@RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)*@
+
+    <nav>
+        <ul id="menu">
+            <li> @Html.ActionLink("Thể Loại", "Index", "TheLoai") </li>
+            <li> @Html.ActionLink("Album", "Index", "Album") </li>
+            <li> @Html.ActionLink("Trình bày", "Index", "TrinhBay") </li>
+            <li> @Html.ActionLink("Trang chủ", "Index", "Home") </li>
+        </ul>
+    </nav>
+    <header id="pageHeader">
+        <img src="~/Images/VietMusic.png" alt="" height="90" />
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer id="pageFooter">
+        <div style="text-align:center">
+            <p>&copy; @DateTime.Now.Year - Việt Nam Music - Thực hành ASP.NET MVC4 Application</p>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+</body>
+</html>

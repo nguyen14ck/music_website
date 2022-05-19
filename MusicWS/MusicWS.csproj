@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6418D726-DEC6-4E48-A364-2E770AA5C8A9}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MusicWS</RootNamespace>
+    <AssemblyName>MusicWS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AlbumController.cs" />
+    <Compile Include="Controllers\BaiHatController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CaSyController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SamplesController.cs" />
+    <Compile Include="Controllers\TheLoaiController.cs" />
+    <Compile Include="Controllers\TrinhBayController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Album.cs">
+      <DependentUpon>Music.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaiHat.cs">
+      <DependentUpon>Music.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartLine.cs" />
+    <Compile Include="Models\CaSy.cs">
+      <DependentUpon>Music.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomAnnotations.cs" />
+    <Compile Include="Models\DatHang.cs">
+      <DependentUpon>Music.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DatHangCt.cs">
+      <DependentUpon>Music.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Music.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Music.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Music.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Music.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Music.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Music.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MusicMetaData.cs" />
+    <Compile Include="Models\TacGia.cs">
+      <DependentUpon>Music.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TheLoai.cs">
+      <DependentUpon>Music.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TrinhBay.cs">
+      <DependentUpon>Music.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AlbumsList.cs" />
+    <Compile Include="ViewModels\CartIndex.cs" />
+    <Compile Include="ViewModels\PagingInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\CartStyle.css" />
+    <Content Include="Content\FormLoginStyle.css" />
+    <Content Include="Content\FormStyle.css" />
+    <Content Include="Content\PagerStyle.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\WebGridStyle.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <EntityDeploy Include="Models\Music.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Music.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Images\cafe.jpg" />
+    <Content Include="Images\calendar.jpg" />
+    <Content Include="Images\cart.png" />
+    <Content Include="Images\cart1.jpg" />
+    <Content Include="Images\checkout.jpg" />
+    <Content Include="Images\checkout1.png" />
+    <Content Include="Images\checkout4.png" />
+    <Content Include="Images\Music.jpg" />
+    <Content Include="Images\Music1.jpg" />
+    <Content Include="Images\Music2.jpg" />
+    <Content Include="Images\MVC4Logo.png" />
+    <Content Include="Images\new.gif" />
+    <Content Include="Images\NoImage.jpg" />
+    <Content Include="Images\play1.jpg" />
+    <Content Include="Images\play1_18.jpg" />
+    <Content Include="Images\play3.jpg" />
+    <Content Include="Images\play4.jpg" />
+    <Content Include="Images\play5.jpg" />
+    <Content Include="Images\play6.jpg" />
+    <Content Include="Images\VietMusic.png" />
+    <Content Include="Models\Music.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Music.edmx</DependentUpon>
+      <LastGenOutput>Music.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Music.edmx.diagram">
+      <DependentUpon>Music.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Music.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Music.edmx</DependentUpon>
+      <LastGenOutput>Music.cs</LastGenOutput>
+    </Content>
+    <Content Include="Images\Thumbs.db" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Music\Bông Bí Vàng - Chút Tình Quê - Đông Đào.mp3" />
+    <Content Include="Music\Bông Bí Vàng - Đêm Gành Hào Nghe Điệu Hoài Lang - Đông Đào.mp3" />
+    <Content Include="Music\Dem Ganh Hao Nghe Dieu Hoai Lang - Cam Ly.mp3" />
+    <Content Include="Music\Diệu Hương - Hát Cho Đời Hát Cho Người - Quang Dũng.mp3" />
+    <Content Include="Music\Diệu Hương - Vì Đó Là Em - Quang Dũng.mp3" />
+    <Content Include="Music\Khi Ta Yêu Nhau 2 - Dòng Đời - Elvis Phương.mp3" />
+    <Content Include="Music\Khi Ta Yêu Nhau 2 - Tình Khúc Mùa Thu - Elvis Phương.mp3" />
+    <Content Include="Music\Mộng Dưới Hoa - Biệt Ly - Elvis Phương.mp3" />
+    <Content Include="Music\Mộng Dưới Hoa - Dư Âm - Elvis Phương.mp3" />
+    <Content Include="Music\Mộng Dưới Hoa - Mộng Dưới Hoa - Elvis Phương.mp3" />
+    <Content Include="Music\Một Cõi Đi Về 2 - Tưởng Rằng Đã Quên - Lê Dung.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Bài Tango Cho Em - Quốc Đại.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Bài Thơ Không Đoạn Kết - Xuân Phú.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Chờ Người - Xuân Phú.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Duyên Kiếp - Quốc Đại.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Khúc Ca Ngày Mùa - Hà Phương.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Lá Thư Miền Trung - Vân Khánh.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Mùa Thu Yêu Đương - Quốc Đại.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Một Mình - Khánh Loan.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Thao Thức Vì Anh - Cẩm Ly.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Thành Phố Buồn - Xuân Phú.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Trăm Nhớ Ngàn Thương - Khánh Loan.mp3" />
+    <Content Include="Music\Tình Ca Lam Phương - Đèn Khuya - Xuân Phú.mp3" />
+    <Content Include="Photos\Album\AiChoToiTinhYeu-QuangLe.jpg" />
+    <Content Include="Photos\Album\BongBiVang.jpg" />
+    <Content Include="Photos\Album\Desert.jpg" />
+    <Content Include="Photos\Album\DieuHuongBaiTinhCaCuaEm-QuangDung.jpg" />
+    <Content Include="Photos\Album\EmGaiQue-CamLy.jpg" />
+    <Content Include="Photos\Album\KhiTaYeuNhau2.jpg" />
+    <Content Include="Photos\Album\MongDuoiHoa.jpg" />
+    <Content Include="Photos\Album\MotCoiDiVe2.jpg" />
+    <Content Include="Photos\Album\NoImage.jpg" />
+    <Content Include="Photos\Album\SauDauQueNgoai-CamLy.jpg" />
+    <Content Include="Photos\Album\ThuongNhoNguoiDung-CamLy.jpg" />
+    <Content Include="Photos\Album\ThuyenXaBenXua-NhuQuynh.jpg" />
+    <Content Include="Photos\Album\TinhCaLamPhuong.jpg" />
+    <Content Include="Photos\Album\ViDoLaEm-TuanNgoc.jpg" />
+    <Content Include="Photos\Casy\BaoYen.jpg" />
+    <Content Include="Photos\Casy\CamLy.jpg" />
+    <Content Include="Photos\Casy\DamVinhHung.jpg" />
+    <Content Include="Photos\Casy\DanTruong.jpg" />
+    <Content Include="Photos\Casy\DongDao.jpg" />
+    <Content Include="Photos\Casy\DucLong.jpg" />
+    <Content Include="Photos\Casy\DucTuan.jpg" />
+    <Content Include="Photos\Casy\ElvisPhuong.jpg" />
+    <Content Include="Photos\Casy\GiaoLinh.jpg" />
+    <Content Include="Photos\Casy\HaPhuong.jpg" />
+    <Content Include="Photos\Casy\HienThuc.jpg" />
+    <Content Include="Photos\Casy\HuongLan.jpg" />
+    <Content Include="Photos\Casy\KhanhLoan.jpg" />
+    <Content Include="Photos\Casy\KhanhLy.jpg" />
+    <Content Include="Photos\Casy\KimAnh.jpg" />
+    <Content Include="Photos\Casy\LeDung.jpg" />
+    <Content Include="Photos\Casy\LeTuan.jpg" />
+    <Content Include="Photos\Casy\LoThuy.jpg" />
+    <Content Include="Photos\Casy\MaiHoa.jpg" />
+    <Content Include="Photos\Casy\MaiQuocHuy.jpg" />
+    <Content Include="Photos\Casy\MyLinh.jpg" />
+    <Content Include="Photos\Casy\NgocLan.jpg" />
+    <Content Include="Photos\Casy\NgocSon.jpg" />
+    <Content Include="Photos\Casy\NhuQuynh.jpg" />
+    <Content Include="Photos\Casy\NoImage.jpg" />
+    <Content Include="Photos\Casy\PhiNhung.jpg" />
+    <Content Include="Photos\Casy\QuangDung.jpg" />
+    <Content Include="Photos\Casy\QuangLe.jpg" />
+    <Content Include="Photos\Casy\QuocDai.jpg" />
+    <Content Include="Photos\Casy\ThanhLam.jpg" />
+    <Content Include="Photos\Casy\TrinhNamSon.jpg" />
+    <Content Include="Photos\Casy\TrinhVinhTrinh.jpg" />
+    <Content Include="Photos\Casy\TuanNgoc.jpg" />
+    <Content Include="Photos\Casy\VanKhanh.jpg" />
+    <Content Include="Photos\Casy\XuanPhu.jpg" />
+    <Content Include="Photos\Casy\YLan.jpg" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Views\Shared\_LayoutInfo.cshtml" />
+    <Content Include="Views\Album\Browse.cshtml" />
+    <Content Include="Views\Album\Create.cshtml" />
+    <Content Include="Views\Album\Delete.cshtml" />
+    <Content Include="Views\Album\Detail.cshtml" />
+    <Content Include="Views\Album\Edit.cshtml" />
+    <Content Include="Views\Album\List.cshtml" />
+    <Content Include="Views\Album\List1.cshtml" />
+    <Content Include="Views\Album\List2.cshtml" />
+    <Content Include="Views\BaiHat\Create.cshtml" />
+    <Content Include="Views\BaiHat\Index.cshtml" />
+    <Content Include="Views\BaiHat\List1.cshtml" />
+    <Content Include="Views\CaSy\Create.cshtml" />
+    <Content Include="Views\CaSy\Delete.cshtml" />
+    <Content Include="Views\CaSy\Details.cshtml" />
+    <Content Include="Views\CaSy\Edit.cshtml" />
+    <Content Include="Views\CaSy\Index.cshtml" />
+    <Content Include="Views\TrinhBay\Album.cshtml" />
+    <Content Include="Views\TrinhBay\CaSy.cshtml" />
+    <Content Include="Views\TrinhBay\Search.cshtml" />
+    <Content Include="Views\TrinhBay\TacGia.cshtml" />
+    <Content Include="Views\TrinhBay\_PlayPartial.cshtml" />
+    <Content Include="Views\Album\_AddCartPartial.cshtml" />
+    <Content Include="Views\Album\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutAccount.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Cart\Completed.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\TheLoai\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2005/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

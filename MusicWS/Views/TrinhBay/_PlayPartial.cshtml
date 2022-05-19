@@ -1,0 +1,17 @@
+﻿@using MusicWS.Models;
+@{
+    TrinhBay item = ViewBag.TrinhBay as TrinhBay;
+    string FileName = "";
+    string TenBaiHat = "";
+    if(item!=null)
+    {
+        FileName = item.TenTapTin + ".mp3";
+        TenBaiHat = item.BaiHat.TenBaiHat;
+    }
+ }
+<h4>Ca khúc: @TenBaiHat</h4>
+
+<audio controls autoplay>
+    <source src="~/Music/@FileName" type="audio/mpeg" />
+    <p>Trình duyệt không hỗ trợ thẻ 'audio'.</p>
+</audio>

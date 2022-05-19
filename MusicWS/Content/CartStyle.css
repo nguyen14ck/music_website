@@ -1,0 +1,30 @@
+﻿/*--Cart
+------------------------------*/
+
+/*_AlbumSummaryPartial*/
+FORM { margin: 0; padding: 0; }
+DIV.item{width:800px;margin-left:20px;padding-left:20px;}
+DIV.item FORM { float:right; }
+
+DIV.item INPUT { 
+    color:black; background-color: #fff; border: 1px solid #e2e2e2; cursor:pointer;  
+} 
+/*Cart:Index*/
+H2 { margin-top: 0.3em } 
+THEAD TD { border-top: 2px solid red; font-weight: bold; } 
+TFOOT TD { border-top: 1px dotted gray; font-weight: bold; } 
+.actionButtons A, INPUT.actionButtons { 
+    font: .9em Arial; color: White; margin: .5em; 
+    text-decoration: none; padding: .15em 1.5em .2em 1.5em; 
+    background-color: #f79749; border: 1px solid #e2e2e2; 
+}
+.actionButtons a:hover,INPUT.actionButtons:hover
+{
+    background-color: #ee482a; 
+}
+/*Summary*/
+
+DIV#cart { float:right; margin: .8em; color:#f50808;
+   background-color: #555; padding: .5em .5em .5em 1em; } 
+DIV#cart A { text-decoration: none; padding: .4em 1em .4em 1em; line-height:2.1em; 
+   margin-left: .5em; background-color: #bfb8b3; border: 1px solid #e2e2e2;color:#fff;} 

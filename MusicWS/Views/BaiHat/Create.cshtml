@@ -1,0 +1,49 @@
+﻿@model MusicWS.Models.BaiHat
+
+@{    
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <article class="boxRSL">
+        <div class="alignR">@Html.ActionLink("Trở về","Index")</div>
+        <h2 class="border-Bottom">@ViewBag.Message</h2>
+        <fieldset class="border-Bottom">
+            <legend>&nbsp;</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model=> model.TenBaiHat)                
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model=>model.TenBaiHat)               
+                @Html.ValidationMessageFor(model=>model.TenBaiHat)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model=>model.TacGiaId,"Tác giả")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("TacGiaId",String.Empty)           
+                @Html.ValidationMessageFor(model=>model.TacGiaId)
+            </div>            
+            <div class="editor-label">
+                @Html.LabelFor(model=>model.TheLoaiId,"Thể loại")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("TheLoaiId",String.Empty)           
+                @Html.ValidationMessageFor(model=>model.TheLoaiId)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model=> model.LoiBaiHat)                
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(model=>model.LoiBaiHat, rows:6,columns:10,htmlAttributes:new{@style="width:550px;"})
+            </div>
+        </fieldset>
+        <footer class="alignR">
+            <input type="submit" value="Ghi" />
+            @Html.ValidationSummary(true)
+         </footer>
+    </article>
+}

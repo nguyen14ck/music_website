@@ -1,0 +1,32 @@
+﻿@model List<MusicWS.Models.TrinhBay>
+@{
+    MusicWS.Models.TrinhBay cktb = (MusicWS.Models.TrinhBay)ViewBag.TrinhBay;
+    }
+
+<article class="content-right boxRSL">
+<header class="border-Bottom"><h2>@ViewBag.Message</h2></header>
+    @if (cktb != null)
+    {
+        Html.RenderAction("_PlayPartial", "TrinhBay", new { trinhbay = cktb });
+    }
+    <div class="boxRSR" style="height:270px;overflow-x:scroll;margin:6px;">
+            <ul style="-webkit-column-count:2;height:220px;"> 
+                @foreach (var item in Model)
+                {
+                    <li style="margin:6px 0px;">
+                        <a href="@Url.Action("Album", "TrinhBay", new { id=item.AlbumId,idTB=item.TrinhBayId})">
+                            <img src="~/Images/play3.jpg" style="width:14px;"/>
+                        </a>
+                        @Html.DisplayNameFor(p=>item.BaiHatId)
+                        <b>@Html.DisplayFor(p=>item.BaiHat.TenBaiHat)</b><br />
+
+                        @Html.DisplayNameFor(p=>item.BaiHat.TacGia.TenTacGia)
+                        @Html.ActionLink(item.BaiHat.TacGia.TenTacGia, "TacGia", "TrinhBay", new { id=item.BaiHat.TacGiaId},null)
+
+                        @Html.DisplayNameFor(p=>item.CaSyId)
+                        @Html.ActionLink(item.CaSy.TenCaSy,"CaSy","TrinhBay",new{id=item.CaSyId},null)
+                    </li>
+                }
+            </ul>
+        </div>
+</article>

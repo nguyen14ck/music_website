@@ -1,0 +1,173 @@
+﻿fieldset {
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+    fieldset legend
+{
+    display: none;
+    
+       
+}
+
+    fieldset ol {
+        padding: 0;
+        list-style: none;
+    }
+
+        fieldset ol li {
+            padding-bottom: 5px;
+            
+        }
+
+label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+label.checkbox {
+    display: inline;
+}
+
+input, textarea,select {
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    color: #333;
+    font-size: 1.2em;
+    margin: 5px 0 6px 0;
+    padding: 5px;
+    width: 300px;
+}
+
+textarea {
+    font-family: inherit;
+    
+}
+
+    input:focus, textarea:focus {
+        border: 1px solid #7ac0da;
+    }
+
+    input[type="checkbox"] {
+        background: transparent;
+        border: inherit;
+        width: auto;
+    }
+
+    input[type="submit"],
+    input[type="button"],
+    button {
+                
+        cursor: pointer;
+        font-size: 1.1em;
+        font-weight: 500;
+        padding:6px 10px;
+        margin-right: 8px;
+        width:auto;
+         background-color:#fff;
+         border:1px solid #e2e2e2;
+         -webkit-border-radius:12px;
+         -webkit-box-shadow: #e2e2e2 0px 0px 3px 2px inset;
+    }
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover
+{
+    background-color:#f5ecbd;
+}
+input[type="submit"]:focus,
+input[type="button"]:focus,
+button:focus
+{
+      -webkit-border-radius:2px;
+      background-color:#f5ecbd;
+}
+    .editor-label, .display-label
+{
+    float:left;
+    width:30%;
+    text-align:right;
+    font-weight:600;
+}
+.display-label,.display-field
+{
+    margin:10px 0px;
+}
+    .editor-label label
+    {
+        margin:6px 0px;
+        padding:4px;
+        
+    }
+.editor-field,.display-field
+{
+    float:left;
+    width:65%;
+    margin-left:5px;
+    
+   
+}
+.editor-row
+{
+   
+    display:table;
+    width:100%;
+    margin:0px auto;
+}
+
+/* info and errors */
+.message-info {
+    border: 1px solid;
+    clear: both;
+    padding: 10px 20px;
+}
+
+.message-error {
+    clear: both;
+    color: #e80c4d;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.message-success {
+    color: #7ac0da;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.error {
+    color: red;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}

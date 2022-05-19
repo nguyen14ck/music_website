@@ -1,0 +1,31 @@
+﻿@model MusicWS.Models.CaSy
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+        <article class="boxRSL">
+            <div class="alignR">@Html.ActionLink("Trở về","Index")</div>
+            <h2 class="border-Bottom">@ViewBag.Message</h2>
+            <fieldset class="border-Bottom">
+                <legend>&nbsp;</legend>
+                <div class="editor-label">
+                @Html.LabelFor(model=>model.TenCaSy)
+                    </div>
+                  <div class="editor-label">
+                @Html.TextBoxFor(model=>model.TenCaSy)
+                    </div>
+                  <div class="editor-label">
+                @Html.LabelFor(model=>model.TieuSu)
+                    </div>
+                  <div class="editor-label">
+                @Html.TextAreaFor(model => model.TieuSu, rows:4, columns:10, htmlAttributes: new { @style="width:550px;" })
+                    </div>
+            </fieldset>
+            <footer class="alignR">
+                <input type="submit" value="Ghi" />
+            </footer>
+            @Html.ValidationSummary(false)
+        </article>
+}

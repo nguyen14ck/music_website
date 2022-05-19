@@ -1,0 +1,14 @@
+﻿@model MusicWS.Models.CaSy
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm)
+{
+    @Html.AntiForgeryToken()
+    <article class="boxRSL">
+        @Html.ValidationSummary(false)
+        <div class="alignR">@Html.ActionLink("Trở về","Index")</div>
+    </article>
+}

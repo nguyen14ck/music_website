@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MusicWS.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MusicWSModelsStoreContainer">
+          <EntitySet Name="Album" EntityType="MusicWS.Models.Store.Album" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BaiHat" EntityType="MusicWS.Models.Store.BaiHat" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CaSy" EntityType="MusicWS.Models.Store.CaSy" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DatHang" EntityType="MusicWS.Models.Store.DatHang" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DatHangCt" EntityType="MusicWS.Models.Store.DatHangCt" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TacGia" EntityType="MusicWS.Models.Store.TacGia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TheLoai" EntityType="MusicWS.Models.Store.TheLoai" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TrinhBay" EntityType="MusicWS.Models.Store.TrinhBay" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BaiHat_TacGia" Association="MusicWS.Models.Store.FK_BaiHat_TacGia">
+            <End Role="TacGia" EntitySet="TacGia" />
+            <End Role="BaiHat" EntitySet="BaiHat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaiHat_TheLoai" Association="MusicWS.Models.Store.FK_BaiHat_TheLoai">
+            <End Role="TheLoai" EntitySet="TheLoai" />
+            <End Role="BaiHat" EntitySet="BaiHat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatHangCT_Album" Association="MusicWS.Models.Store.FK_DatHangCT_Album">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="DatHangCt" EntitySet="DatHangCt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatHangCT_DatHang" Association="MusicWS.Models.Store.FK_DatHangCT_DatHang">
+            <End Role="DatHang" EntitySet="DatHang" />
+            <End Role="DatHangCt" EntitySet="DatHangCt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrinhBay_Album" Association="MusicWS.Models.Store.FK_TrinhBay_Album">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="TrinhBay" EntitySet="TrinhBay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrinhBay_BaiHat" Association="MusicWS.Models.Store.FK_TrinhBay_BaiHat">
+            <End Role="BaiHat" EntitySet="BaiHat" />
+            <End Role="TrinhBay" EntitySet="TrinhBay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrinhBay_CaSi" Association="MusicWS.Models.Store.FK_TrinhBay_CaSi">
+            <End Role="CaSy" EntitySet="CaSy" />
+            <End Role="TrinhBay" EntitySet="TrinhBay" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="AlbumId" />
+          </Key>
+          <Property Name="AlbumId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenAlbum" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayPhatHanh" Type="date" Nullable="false" />
+          <Property Name="GiaBan" Type="numeric" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="AnhBia" Type="varchar" MaxLength="40" />
+          <Property Name="GioiThieu" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="BaiHat">
+          <Key>
+            <PropertyRef Name="BaiHatId" />
+          </Key>
+          <Property Name="BaiHatId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenBaiHat" Type="nvarchar" MaxLength="100" />
+          <Property Name="LoiBaiHat" Type="nvarchar(max)" />
+          <Property Name="TacGiaId" Type="int" Nullable="false" />
+          <Property Name="TheLoaiId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CaSy">
+          <Key>
+            <PropertyRef Name="CaSyId" />
+          </Key>
+          <Property Name="CaSyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenCaSy" Type="nvarchar" MaxLength="50" />
+          <Property Name="TieuSu" Type="nvarchar(max)" />
+          <Property Name="Hinh" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="DatHang">
+          <Key>
+            <PropertyRef Name="DatHangId" />
+          </Key>
+          <Property Name="DatHangId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NgayDatHang" Type="datetime" Nullable="false" />
+          <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" />
+          <Property Name="HoKhachHang" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenKhachHang" Type="nvarchar" MaxLength="16" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+          <Property Name="DienThoai" Type="varchar" MaxLength="24" />
+          <Property Name="Email" Type="nvarchar" MaxLength="160" />
+          <Property Name="TriGia" Type="numeric" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="DatHangCt">
+          <Key>
+            <PropertyRef Name="DatHangCtId" />
+          </Key>
+          <Property Name="DatHangCtId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DatHangId" Type="int" Nullable="false" />
+          <Property Name="AlbumId" Type="int" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="GiaBan" Type="numeric" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="TacGia">
+          <Key>
+            <PropertyRef Name="TacGiaId" />
+          </Key>
+          <Property Name="TacGiaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenTacGia" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TheLoai">
+          <Key>
+            <PropertyRef Name="TheLoaiId" />
+          </Key>
+          <Property Name="TheLoaiId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenTheLoai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TrinhBay">
+          <Key>
+            <PropertyRef Name="TrinhBayId" />
+          </Key>
+          <Property Name="TrinhBayId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AlbumId" Type="int" Nullable="false" />
+          <Property Name="BaiHatId" Type="int" Nullable="false" />
+          <Property Name="CaSyId" Type="int" Nullable="false" />
+          <Property Name="TenTapTin" Type="nvarchar" MaxLength="150" />
+          <Property Name="LuotNghe" Type="int" Nullable="false" />
+          <Property Name="YeuThich" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BaiHat_TacGia">
+          <End Role="TacGia" Type="MusicWS.Models.Store.TacGia" Multiplicity="1" />
+          <End Role="BaiHat" Type="MusicWS.Models.Store.BaiHat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TacGia">
+              <PropertyRef Name="TacGiaId" />
+            </Principal>
+            <Dependent Role="BaiHat">
+              <PropertyRef Name="TacGiaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaiHat_TheLoai">
+          <End Role="TheLoai" Type="MusicWS.Models.Store.TheLoai" Multiplicity="1" />
+          <End Role="BaiHat" Type="MusicWS.Models.Store.BaiHat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TheLoai">
+              <PropertyRef Name="TheLoaiId" />
+            </Principal>
+            <Dependent Role="BaiHat">
+              <PropertyRef Name="TheLoaiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DatHangCT_Album">
+          <End Role="Album" Type="MusicWS.Models.Store.Album" Multiplicity="1" />
+          <End Role="DatHangCt" Type="MusicWS.Models.Store.DatHangCt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="AlbumId" />
+            </Principal>
+            <Dependent Role="DatHangCt">
+              <PropertyRef Name="AlbumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DatHangCT_DatHang">
+          <End Role="DatHang" Type="MusicWS.Models.Store.DatHang" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DatHangCt" Type="MusicWS.Models.Store.DatHangCt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DatHang">
+              <PropertyRef Name="DatHangId" />
+            </Principal>
+            <Dependent Role="DatHangCt">
+              <PropertyRef Name="DatHangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrinhBay_Album">
+          <End Role="Album" Type="MusicWS.Models.Store.Album" Multiplicity="1" />
+          <End Role="TrinhBay" Type="MusicWS.Models.Store.TrinhBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="AlbumId" />
+            </Principal>
+            <Dependent Role="TrinhBay">
+              <PropertyRef Name="AlbumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrinhBay_BaiHat">
+          <End Role="BaiHat" Type="MusicWS.Models.Store.BaiHat" Multiplicity="1" />
+          <End Role="TrinhBay" Type="MusicWS.Models.Store.TrinhBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BaiHat">
+              <PropertyRef Name="BaiHatId" />
+            </Principal>
+            <Dependent Role="TrinhBay">
+              <PropertyRef Name="BaiHatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrinhBay_CaSi">
+          <End Role="CaSy" Type="MusicWS.Models.Store.CaSy" Multiplicity="1" />
+          <End Role="TrinhBay" Type="MusicWS.Models.Store.TrinhBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CaSy">
+              <PropertyRef Name="CaSyId" />
+            </Principal>
+            <Dependent Role="TrinhBay">
+              <PropertyRef Name="CaSyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MusicWS.Models" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MusicDataContext" p1:LazyLoadingEnabled="false">
+          <EntitySet Name="Albums" EntityType="MusicWS.Models.Album" />
+          <EntitySet Name="BaiHats" EntityType="MusicWS.Models.BaiHat" />
+          <EntitySet Name="CaSies" EntityType="MusicWS.Models.CaSy" />
+          <EntitySet Name="DatHangs" EntityType="MusicWS.Models.DatHang" />
+          <EntitySet Name="DatHangCts" EntityType="MusicWS.Models.DatHangCt" />
+          <EntitySet Name="TacGias" EntityType="MusicWS.Models.TacGia" />
+          <EntitySet Name="TheLoais" EntityType="MusicWS.Models.TheLoai" />
+          <EntitySet Name="TrinhBays" EntityType="MusicWS.Models.TrinhBay" />
+          <AssociationSet Name="FK_DatHangCT_Album" Association="MusicWS.Models.FK_DatHangCT_Album">
+            <End Role="Album" EntitySet="Albums" />
+            <End Role="DatHangCt" EntitySet="DatHangCts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrinhBay_Album" Association="MusicWS.Models.FK_TrinhBay_Album">
+            <End Role="Album" EntitySet="Albums" />
+            <End Role="TrinhBay" EntitySet="TrinhBays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaiHat_TacGia" Association="MusicWS.Models.FK_BaiHat_TacGia">
+            <End Role="TacGia" EntitySet="TacGias" />
+            <End Role="BaiHat" EntitySet="BaiHats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BaiHat_TheLoai" Association="MusicWS.Models.FK_BaiHat_TheLoai">
+            <End Role="TheLoai" EntitySet="TheLoais" />
+            <End Role="BaiHat" EntitySet="BaiHats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrinhBay_BaiHat" Association="MusicWS.Models.FK_TrinhBay_BaiHat">
+            <End Role="BaiHat" EntitySet="BaiHats" />
+            <End Role="TrinhBay" EntitySet="TrinhBays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrinhBay_CaSi" Association="MusicWS.Models.FK_TrinhBay_CaSi">
+            <End Role="CaSy" EntitySet="CaSies" />
+            <End Role="TrinhBay" EntitySet="TrinhBays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DatHangCT_DatHang" Association="MusicWS.Models.FK_DatHangCT_DatHang">
+            <End Role="DatHang" EntitySet="DatHangs" />
+            <End Role="DatHangCt" EntitySet="DatHangCts" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="AlbumId" />
+          </Key>
+          <Property Name="AlbumId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TenAlbum" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NgayPhatHanh" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GiaBan" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="AnhBia" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="GioiThieu" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="DatHangCts" Relationship="MusicWS.Models.FK_DatHangCT_Album" FromRole="Album" ToRole="DatHangCt" />
+          <NavigationProperty Name="TrinhBays" Relationship="MusicWS.Models.FK_TrinhBay_Album" FromRole="Album" ToRole="TrinhBay" />
+        </EntityType>
+        <EntityType Name="BaiHat">
+          <Key>
+            <PropertyRef Name="BaiHatId" />
+          </Key>
+          <Property Name="BaiHatId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TenBaiHat" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="LoiBaiHat" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TacGiaId" Type="Int32" Nullable="false" />
+          <Property Name="TheLoaiId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TacGia" Relationship="MusicWS.Models.FK_BaiHat_TacGia" FromRole="BaiHat" ToRole="TacGia" />
+          <NavigationProperty Name="TheLoai" Relationship="MusicWS.Models.FK_BaiHat_TheLoai" FromRole="BaiHat" ToRole="TheLoai" />
+          <NavigationProperty Name="TrinhBays" Relationship="MusicWS.Models.FK_TrinhBay_BaiHat" FromRole="BaiHat" ToRole="TrinhBay" />
+        </EntityType>
+        <EntityType Name="CaSy">
+          <Key>
+            <PropertyRef Name="CaSyId" />
+          </Key>
+          <Property Name="CaSyId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TenCaSy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TieuSu" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Hinh" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="TrinhBays" Relationship="MusicWS.Models.FK_TrinhBay_CaSi" FromRole="CaSy" ToRole="TrinhBay" />
+        </EntityType>
+        <EntityType Name="DatHang">
+          <Key>
+            <PropertyRef Name="DatHangId" />
+          </Key>
+          <Property Name="DatHangId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="NgayDatHang" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TenDangNhap" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HoKhachHang" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TenKhachHang" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DienThoai" Type="String" MaxLength="24" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="160" Unicode="true" FixedLength="false" />
+          <Property Name="TriGia" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="DatHangCts" Relationship="MusicWS.Models.FK_DatHangCT_DatHang" FromRole="DatHang" ToRole="DatHangCt" />
+        </EntityType>
+        <EntityType Name="DatHangCt">
+          <Key>
+            <PropertyRef Name="DatHangCtId" />
+          </Key>
+          <Property Name="DatHangCtId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DatHangId" Type="Int32" Nullable="false" />
+          <Property Name="AlbumId" Type="Int32" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="GiaBan" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="Album" Relationship="MusicWS.Models.FK_DatHangCT_Album" FromRole="DatHangCt" ToRole="Album" />
+          <NavigationProperty Name="DatHang" Relationship="MusicWS.Models.FK_DatHangCT_DatHang" FromRole="DatHangCt" ToRole="DatHang" />
+        </EntityType>
+        <EntityType Name="TacGia">
+          <Key>
+            <PropertyRef Name="TacGiaId" />
+          </Key>
+          <Property Name="TacGiaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTacGia" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="BaiHats" Relationship="MusicWS.Models.FK_BaiHat_TacGia" FromRole="TacGia" ToRole="BaiHat" />
+        </EntityType>
+        <EntityType Name="TheLoai">
+          <Key>
+            <PropertyRef Name="TheLoaiId" />
+          </Key>
+          <Property Name="TheLoaiId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTheLoai" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="BaiHats" Relationship="MusicWS.Models.FK_BaiHat_TheLoai" FromRole="TheLoai" ToRole="BaiHat" />
+        </EntityType>
+        <EntityType Name="TrinhBay">
+          <Key>
+            <PropertyRef Name="TrinhBayId" />
+          </Key>
+          <Property Name="TrinhBayId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="AlbumId" Type="Int32" Nullable="false" />
+          <Property Name="BaiHatId" Type="Int32" Nullable="false" />
+          <Property Name="CaSyId" Type="Int32" Nullable="false" />
+          <Property Name="TenTapTin" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="LuotNghe" Type="Int32" Nullable="false" />
+          <Property Name="YeuThich" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Album" Relationship="MusicWS.Models.FK_TrinhBay_Album" FromRole="TrinhBay" ToRole="Album" />
+          <NavigationProperty Name="BaiHat" Relationship="MusicWS.Models.FK_TrinhBay_BaiHat" FromRole="TrinhBay" ToRole="BaiHat" />
+          <NavigationProperty Name="CaSy" Relationship="MusicWS.Models.FK_TrinhBay_CaSi" FromRole="TrinhBay" ToRole="CaSy" />
+        </EntityType>
+        <Association Name="FK_DatHangCT_Album">
+          <End Role="Album" Type="MusicWS.Models.Album" Multiplicity="1" />
+          <End Role="DatHangCt" Type="MusicWS.Models.DatHangCt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="AlbumId" />
+            </Principal>
+            <Dependent Role="DatHangCt">
+              <PropertyRef Name="AlbumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrinhBay_Album">
+          <End Role="Album" Type="MusicWS.Models.Album" Multiplicity="1" />
+          <End Role="TrinhBay" Type="MusicWS.Models.TrinhBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="AlbumId" />
+            </Principal>
+            <Dependent Role="TrinhBay">
+              <PropertyRef Name="AlbumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaiHat_TacGia">
+          <End Role="TacGia" Type="MusicWS.Models.TacGia" Multiplicity="1" />
+          <End Role="BaiHat" Type="MusicWS.Models.BaiHat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TacGia">
+              <PropertyRef Name="TacGiaId" />
+            </Principal>
+            <Dependent Role="BaiHat">
+              <PropertyRef Name="TacGiaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BaiHat_TheLoai">
+          <End Role="TheLoai" Type="MusicWS.Models.TheLoai" Multiplicity="1" />
+          <End Role="BaiHat" Type="MusicWS.Models.BaiHat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TheLoai">
+              <PropertyRef Name="TheLoaiId" />
+            </Principal>
+            <Dependent Role="BaiHat">
+              <PropertyRef Name="TheLoaiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrinhBay_BaiHat">
+          <End Role="BaiHat" Type="MusicWS.Models.BaiHat" Multiplicity="1" />
+          <End Role="TrinhBay" Type="MusicWS.Models.TrinhBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BaiHat">
+              <PropertyRef Name="BaiHatId" />
+            </Principal>
+            <Dependent Role="TrinhBay">
+              <PropertyRef Name="BaiHatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrinhBay_CaSi">
+          <End Role="CaSy" Type="MusicWS.Models.CaSy" Multiplicity="1" />
+          <End Role="TrinhBay" Type="MusicWS.Models.TrinhBay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CaSy">
+              <PropertyRef Name="CaSyId" />
+            </Principal>
+            <Dependent Role="TrinhBay">
+              <PropertyRef Name="CaSyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DatHangCT_DatHang">
+          <End Role="DatHang" Type="MusicWS.Models.DatHang" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DatHangCt" Type="MusicWS.Models.DatHangCt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DatHang">
+              <PropertyRef Name="DatHangId" />
+            </Principal>
+            <Dependent Role="DatHangCt">
+              <PropertyRef Name="DatHangId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MusicWSModelsStoreContainer" CdmEntityContainer="MusicDataContext">
+          <EntitySetMapping Name="Albums">
+            <EntityTypeMapping TypeName="MusicWS.Models.Album">
+              <MappingFragment StoreEntitySet="Album">
+                <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+                <ScalarProperty Name="TenAlbum" ColumnName="TenAlbum" />
+                <ScalarProperty Name="NgayPhatHanh" ColumnName="NgayPhatHanh" />
+                <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+                <ScalarProperty Name="AnhBia" ColumnName="AnhBia" />
+                <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BaiHats">
+            <EntityTypeMapping TypeName="MusicWS.Models.BaiHat">
+              <MappingFragment StoreEntitySet="BaiHat">
+                <ScalarProperty Name="BaiHatId" ColumnName="BaiHatId" />
+                <ScalarProperty Name="TenBaiHat" ColumnName="TenBaiHat" />
+                <ScalarProperty Name="LoiBaiHat" ColumnName="LoiBaiHat" />
+                <ScalarProperty Name="TacGiaId" ColumnName="TacGiaId" />
+                <ScalarProperty Name="TheLoaiId" ColumnName="TheLoaiId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CaSies">
+            <EntityTypeMapping TypeName="MusicWS.Models.CaSy">
+              <MappingFragment StoreEntitySet="CaSy">
+                <ScalarProperty Name="CaSyId" ColumnName="CaSyId" />
+                <ScalarProperty Name="TenCaSy" ColumnName="TenCaSy" />
+                <ScalarProperty Name="TieuSu" ColumnName="TieuSu" />
+                <ScalarProperty Name="Hinh" ColumnName="Hinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DatHangs">
+            <EntityTypeMapping TypeName="MusicWS.Models.DatHang">
+              <MappingFragment StoreEntitySet="DatHang">
+                <ScalarProperty Name="DatHangId" ColumnName="DatHangId" />
+                <ScalarProperty Name="NgayDatHang" ColumnName="NgayDatHang" />
+                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+                <ScalarProperty Name="HoKhachHang" ColumnName="HoKhachHang" />
+                <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="TriGia" ColumnName="TriGia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DatHangCts">
+            <EntityTypeMapping TypeName="MusicWS.Models.DatHangCt">
+              <MappingFragment StoreEntitySet="DatHangCt">
+                <ScalarProperty Name="DatHangCtId" ColumnName="DatHangCtId" />
+                <ScalarProperty Name="DatHangId" ColumnName="DatHangId" />
+                <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TacGias">
+            <EntityTypeMapping TypeName="MusicWS.Models.TacGia">
+              <MappingFragment StoreEntitySet="TacGia">
+                <ScalarProperty Name="TacGiaId" ColumnName="TacGiaId" />
+                <ScalarProperty Name="TenTacGia" ColumnName="TenTacGia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TheLoais">
+            <EntityTypeMapping TypeName="MusicWS.Models.TheLoai">
+              <MappingFragment StoreEntitySet="TheLoai">
+                <ScalarProperty Name="TheLoaiId" ColumnName="TheLoaiId" />
+                <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrinhBays">
+            <EntityTypeMapping TypeName="MusicWS.Models.TrinhBay">
+              <MappingFragment StoreEntitySet="TrinhBay">
+                <ScalarProperty Name="TrinhBayId" ColumnName="TrinhBayId" />
+                <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+                <ScalarProperty Name="BaiHatId" ColumnName="BaiHatId" />
+                <ScalarProperty Name="CaSyId" ColumnName="CaSyId" />
+                <ScalarProperty Name="TenTapTin" ColumnName="TenTapTin" />
+                <ScalarProperty Name="LuotNghe" ColumnName="LuotNghe" />
+                <ScalarProperty Name="YeuThich" ColumnName="YeuThich" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

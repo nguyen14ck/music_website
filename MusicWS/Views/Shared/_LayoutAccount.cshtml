@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css","~/Content/FormStyle.css","~/Content/FormLoginStyle.css","~/Content/CartStyle.css")
+        @Scripts.Render("~/bundles/modernizr")
+
+    </head>
+    <body>
+      
+         
+  <nav>
+  <section id="login" class="float-left">
+                        @Html.Partial("_LoginPartial")
+          </section>
+                         <ul id="menu">
+                <li>                   
+                                      
+                    @Html.RouteLink("Trang chủ","MyHome",new{action="Index",controller="Home"})
+            
+                     </li>
+                <li></li>
+                <li>@Html.ActionLink("Giới thiệu", "About", "Home")</li>
+                <li>@Html.ActionLink("Liên hệ", "Contact", "Home")</li>
+                 <li>@Html.ActionLink("Your cart", "Index", "Cart")</li>
+                 <li>@Html.ActionLink("Admin", "Index", "TheLoai")</li>
+            </ul>
+                            
+                       
+                    </nav>
+     
+    <header id="pageHeader">
+          
+           <img src="~/Images/VietMusic.png" alt="" height="90" />
+       
+    </header>
+        
+    <div id="body">  
+        
+               
+            @RenderSection("featured", required: false)
+    
+            <section  class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+    </div>
+    <footer id="pageFooter">
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy;@DateTime.Now.Year-Việt Nam Music - Thực hành ASP.NET MVC4 Application</p>
+                </div>
+            </div>
+        </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("Scripts", required: false)
+    </body>
+</html>

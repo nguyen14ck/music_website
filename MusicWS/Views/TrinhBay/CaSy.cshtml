@@ -1,0 +1,19 @@
+﻿@model List<MusicWS.Models.TrinhBay>
+@{
+    ViewBag.Title = "CaSy";
+}
+
+<article class="content-right boxRSL">
+    <header class="border-Bottom"><h2>@ViewBag.Message</h2></header>
+        <ol class="boxRSR" style="-webkit-column-count:2;height:280px;overflow-y:scroll">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <b>@Html.DisplayFor(p=>item.BaiHat.TenBaiHat)</b><br />
+                    Tác giả: @Html.ActionLink(item.BaiHat.TacGia.TenTacGia, "TacGia", "TrinhBay", new { id=item.BaiHat.TacGiaId},null)
+                    Album: @Html.ActionLink(item.Album.TenAlbum, "Album", "TrinhBay", new { id=item.Album.AlbumId},null)
+                </li>
+            }
+        </ol>
+
+</article>

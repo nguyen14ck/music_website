@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MusicWSModelsStoreContainer" CdmEntityContainer="MusicDataContext">
+    <EntitySetMapping Name="Albums">
+      <EntityTypeMapping TypeName="MusicWS.Models.Album">
+        <MappingFragment StoreEntitySet="Album">
+          <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+          <ScalarProperty Name="TenAlbum" ColumnName="TenAlbum" />
+          <ScalarProperty Name="NgayPhatHanh" ColumnName="NgayPhatHanh" />
+          <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="AnhBia" ColumnName="AnhBia" />
+          <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaiHats">
+      <EntityTypeMapping TypeName="MusicWS.Models.BaiHat">
+        <MappingFragment StoreEntitySet="BaiHat">
+          <ScalarProperty Name="BaiHatId" ColumnName="BaiHatId" />
+          <ScalarProperty Name="TenBaiHat" ColumnName="TenBaiHat" />
+          <ScalarProperty Name="LoiBaiHat" ColumnName="LoiBaiHat" />
+          <ScalarProperty Name="TacGiaId" ColumnName="TacGiaId" />
+          <ScalarProperty Name="TheLoaiId" ColumnName="TheLoaiId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaSies">
+      <EntityTypeMapping TypeName="MusicWS.Models.CaSy">
+        <MappingFragment StoreEntitySet="CaSy">
+          <ScalarProperty Name="CaSyId" ColumnName="CaSyId" />
+          <ScalarProperty Name="TenCaSy" ColumnName="TenCaSy" />
+          <ScalarProperty Name="TieuSu" ColumnName="TieuSu" />
+          <ScalarProperty Name="Hinh" ColumnName="Hinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatHangs">
+      <EntityTypeMapping TypeName="MusicWS.Models.DatHang">
+        <MappingFragment StoreEntitySet="DatHang">
+          <ScalarProperty Name="DatHangId" ColumnName="DatHangId" />
+          <ScalarProperty Name="NgayDatHang" ColumnName="NgayDatHang" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="HoKhachHang" ColumnName="HoKhachHang" />
+          <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TriGia" ColumnName="TriGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatHangCts">
+      <EntityTypeMapping TypeName="MusicWS.Models.DatHangCt">
+        <MappingFragment StoreEntitySet="DatHangCt">
+          <ScalarProperty Name="DatHangCtId" ColumnName="DatHangCtId" />
+          <ScalarProperty Name="DatHangId" ColumnName="DatHangId" />
+          <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TacGias">
+      <EntityTypeMapping TypeName="MusicWS.Models.TacGia">
+        <MappingFragment StoreEntitySet="TacGia">
+          <ScalarProperty Name="TacGiaId" ColumnName="TacGiaId" />
+          <ScalarProperty Name="TenTacGia" ColumnName="TenTacGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TheLoais">
+      <EntityTypeMapping TypeName="MusicWS.Models.TheLoai">
+        <MappingFragment StoreEntitySet="TheLoai">
+          <ScalarProperty Name="TheLoaiId" ColumnName="TheLoaiId" />
+          <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrinhBays">
+      <EntityTypeMapping TypeName="MusicWS.Models.TrinhBay">
+        <MappingFragment StoreEntitySet="TrinhBay">
+          <ScalarProperty Name="TrinhBayId" ColumnName="TrinhBayId" />
+          <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+          <ScalarProperty Name="BaiHatId" ColumnName="BaiHatId" />
+          <ScalarProperty Name="CaSyId" ColumnName="CaSyId" />
+          <ScalarProperty Name="TenTapTin" ColumnName="TenTapTin" />
+          <ScalarProperty Name="LuotNghe" ColumnName="LuotNghe" />
+          <ScalarProperty Name="YeuThich" ColumnName="YeuThich" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

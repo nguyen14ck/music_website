@@ -1,0 +1,18 @@
+﻿@model List<MusicWS.Models.BaiHat>
+@{
+    ViewBag.Title = "TacGia";
+}
+
+<article class="content-right boxRSL">
+<header class="border-Bottom"><h2>@ViewBag.Message</h2></header>
+    <ol class="boxRSR" style="-webkit-column-count:2;height:280px;overflow-y:scroll">
+        @foreach (var item in Model)
+        {
+            <li>
+                <b>@Html.DisplayFor(p => item.TenBaiHat)</b>
+                <br />
+            </li>
+        }
+    </ol>
+</article>
+

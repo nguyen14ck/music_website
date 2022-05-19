@@ -1,0 +1,21 @@
+﻿@model MusicWS.ViewModels.AlbumsList
+
+<article class="content-right boxRSL">
+    <header class="border-Bottom"><h2>@ViewBag.Message</h2></header>
+
+    <div style="height:320px; overflow-y:scroll;">
+        @foreach (var album in Model.Albums)
+        {
+            <div style="width:95%">
+                <h3>@album.TenAlbum</h3>
+                <p style="margin-left:10px; text-align:justify;">@album.GioiThieu</p>
+                @{Html.RenderPartial("_AddCartPartial", album);}
+                <p style="font-weight:400" class="alignR">Giá bán: @album.GiaBan.ToString("#,#VNĐ")</p>
+            </div>
+        }
+    </div>
+    <div class="pager">
+        @*@Html.PageLinks(Model.PagingInfo, x=>Url.Action("List","Album", new{page=x}))
+        @Html.PageLinks(Model.PagingInfo, x=>Url.RouteUrl("pageMR2",new{action="List", controller="Album", page=x}))*@
+    </div>
+</article>

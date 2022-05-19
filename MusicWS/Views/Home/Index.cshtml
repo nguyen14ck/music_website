@@ -1,0 +1,26 @@
+﻿@model List<MusicWS.Models.TrinhBay>
+@{
+    ViewBag.Title = "Index";
+}
+
+<article class="content-right boxRSL">
+    <header class="border-Bottom"><h2>@ViewBag.Message</h2>
+
+<ol>
+    @foreach (var item in Model)
+    {
+        <li class="border-Bottom">
+            <b>@Html.DisplayFor(mode=>item.BaiHat.TenBaiHat)</b><br />
+            Tác giả:
+            @Html.ActionLink(item.BaiHat.TacGia.TenTacGia, "TacGia", "TrinhBay", new { id = item.BaiHat.TacGiaId }, null),
+            Ca sỹ:
+            @Html.ActionLink(item.CaSy.TenCaSy, "CaSy", "Trinhbay", new { id = item.CaSy.CaSyId }, null),<br />
+            Album:
+            @Html.ActionLink(item.Album.TenAlbum, "Album", "TrinhBay", new { id=item.Album.AlbumId},null),
+            Lượt nghe:
+            @Html.DisplayFor(mode=>item.LuotNghe)
+        </li>
+    }
+</ol>
+</header>
+</article>

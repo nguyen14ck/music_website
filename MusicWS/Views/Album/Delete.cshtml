@@ -1,0 +1,31 @@
+﻿@model MusicWS.Models.Album
+@{
+    
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    
+    <article class="boxRSL">
+        <div class="alignR">@Html.ActionLink("Trở về","Index")</div>        
+        <h2 class="border-Bottom">@ViewBag.Message</h2>
+        <h3>Bạn có thật sự muốn hủy không?</h3>
+        <fieldset class="border-Bottom">
+            <legend>&nbsp;</legend>            
+            <div class="display-label">
+                @Html.DisplayNameFor(model=>model.TenAlbum)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model=>model.TenAlbum)
+            </div>
+        </fieldset>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <footer class="alignR">
+            <input type="submit" value="Hủy" />
+           
+         </footer>
+        }
+        
+    </article>
+}
+
+

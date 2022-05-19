@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MusicWS.Models.BaiHat>
+@{   
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<article class="content-right boxRSL">
+   
+    <h2 class="borderBOrangeRed">@ViewBag.Message</h2>
+    <div class="wgStyle">
+        @using(Html.BeginForm())
+        {
+            WebGrid grid = new WebGrid(Model,rowsPerPage:5);
+            @grid.GetHtml(
+            columns: grid.Columns(
+            grid.Column("TenBaiHat", header:"Tên bài hát"),
+            grid.Column("TenTacGia", header:"Tác giả",  style:"alignR" ),
+            grid.Column("TenTheLoai", header:"Thể loại", format:p=>p.TheLoai, style:"alignC", canSort:false ),
+            grid.Column(header:"", format: p=>Html.ActionLink("Xem","Detail",new {id=p.BaiHatId})),
+            grid.Column(header:"", format: p=>Html.ActionLink("Sửa","Edit",new {id=p.BaiHatId},null)),
+            grid.Column(header:"", format: p=>Html.ActionLink("Huỷ","Delete",new {id=p.BaiHatId},null))
+            )) 
+        }
+    </div>
+</article>

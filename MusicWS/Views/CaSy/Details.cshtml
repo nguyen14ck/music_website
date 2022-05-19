@@ -1,0 +1,33 @@
+﻿@model MusicWS.Models.CaSy
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<article class="boxRSL">
+            <div class="alignR">@Html.ActionLink("Trở về","Index")</div>
+      <h3>Bạn có thật sự muốn huy?</h3>
+            <h2 class="border-Bottom">@ViewBag.Message</h2>
+            <fieldset class="border-Bottom">
+                <legend>&nbsp;</legend>
+                <div class="display-lable">
+                @Html.DisplayNameFor(model=>model.TenCaSy)
+                    </div>
+                  <div class="display-lable">
+                @Html.DisplayFor(model=>model.TenCaSy)
+                    </div>
+                   <div class="display-lable">
+                @Html.DisplayFor(model => model.TieuSu);
+                    </div>
+                   <div class="display-lable">
+                       @Html.TextAreaFor(model => model.TieuSu,rows:4, columns:10,htmlAttributes: new { @readonly="readonly",@styles="width:550px;"})
+                       </div>
+               
+            </fieldset>
+            @using (Html.BeginForm()){
+                @Html.AntiForgeryToken()
+            <footer class="alignR">
+                <input type="submit" value="&nbsp; Hủy &nbsp;" />
+            </footer>
+            }
+        </article>

@@ -1,0 +1,59 @@
+﻿.wgStyle
+{
+     width:100%;
+  
+}
+.wgStyle table
+{
+    background-color:#fff;
+    border-collapse:collapse;
+    width:800px;
+     margin:10px auto;
+
+}
+.wgStyle table th
+{
+    
+    font-weight:bold;
+     background-color: #e2e2e2;
+    border:1px solid yellowgreen;
+    text-align:center;
+}
+.wgStyle table tfoot
+{
+    font-weight:bold;
+ background-color: #e2e2e2;
+    text-align:center;
+}
+    .wgStyle table td
+    {
+        padding:4px;
+          border:1px solid yellowgreen;
+    }
+    .wgStyle table td a
+    {
+        text-decoration:none;
+        color:blue;
+    }
+    .wgStyle table td a:hover
+    {
+        background:none;
+        color:red;
+    }
+
+    .alignL
+{
+    text-align:left!important;
+}
+.alignR
+{
+    text-align:right!important;
+}
+.alignC
+{
+    text-align:center!important;
+}
+.alignJ
+{
+    text-align:justify!important;
+}

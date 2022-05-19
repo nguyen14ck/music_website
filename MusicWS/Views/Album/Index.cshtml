@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MusicWS.Models.Album>
+@{    
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<article class="boxRSL">
+    <h2 class="borderBOrangeRed">@ViewBag.Message</h2>
+    <p>
+        @Html.ActionLink("Thêm Album","Create",null,new {@style="text-decorat:underline; margin-left:20px"})
+    </p>
+    <div class="title">
+        <div class="alignR">@Html.DisplayNameFor(m=>m.TenAlbum)</div>
+        <div class="alignL">Chức năng xử lý</div>
+    </div>
+    <ul id="list1">
+        @foreach (var e in Model)
+	{
+		 <li>
+             <div class="alignR">
+                 @Html.DisplayFor(m=>e.TenAlbum)
+             </div>
+             <div class="alignL">
+                 @Html.ActionLink("Hiệu chỉnh","Edit",new {id=e.AlbumId}),
+                 @Html.ActionLink("Chi tiết","Detail",new {id=e.AlbumId}),
+                 @Html.ActionLink("Hủy","Delete",new {id=e.AlbumId})
+             </div>
+		 </li>
+	}
+    </ul>
+</article>

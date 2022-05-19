@@ -1,0 +1,382 @@
+﻿html {
+    background-color: #e2e2e2;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+}
+
+a
+{
+    color: #333333;
+    outline: none;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: none;
+}
+
+    a:link, a:visited
+{
+    color: #3E3ECE;
+}
+
+     a:active, a:hover
+{
+    color: #FF3300;
+}
+ 
+header, footer, hgroup,
+nav, section {
+    display: block;
+}
+
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear-fix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    color: #000;
+    margin:2px 10px;
+    padding-bottom: 0px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+    h5 a:link, h5 a:visited, h5 a:active {
+        padding: 0;
+        text-decoration: none;
+    }
+
+
+/* main layout
+----------------------------------------------------------*/
+#pageHeader
+{
+
+    background-image:url("../Images/Music1.jpg");
+    background-size:550px 75px;
+    background-repeat:no-repeat;
+    background-position:right;
+    margin:0px 30px;
+}
+
+#body {
+    background-color: #efeeef;
+    clear: both;
+    padding-bottom: 15px;
+}
+.content-wrapper {
+    margin: 0 auto;
+    width: 960px;
+}
+.main-content {
+        padding-left: 10px;
+        padding-top: 15px;
+    }
+   
+header .content-wrapper {
+    padding-top: 20px; 
+}
+
+#pageFooter {
+    clear: both;
+    background-color: #e2e2e2;
+    font-size: .8em;
+    height: 50px;
+}
+
+/* menu
+----------------------------------------------------------*/
+nav
+{
+    background-color:#1F1F00;
+    padding:3px;
+    border-bottom:3px solid #F6F6F1;
+}
+ul#menu {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 0 0 5px;
+    padding: 0;
+    text-align: right;
+}
+
+    ul#menu li {
+        display: inline;
+        list-style: none;
+        padding-left: 10px;
+    }
+
+        ul#menu li a {
+            background: none;
+            color: #E8E8E8;
+            text-decoration: none;
+        }
+
+        ul#menu li a:hover {
+            color: #FF9933;
+            text-decoration: none;
+        }
+
+
+
+/* Uyen bo sung
+---------------------------------*/
+.boxRSL,.boxRSR
+{
+
+    border:1px solid #e2e2e2;
+     -webkit-border-radius:10px;
+     background-color:#fff;
+     padding:10px!important;
+     margin-left:5px;
+  
+}
+.boxRSL
+{
+     -webkit-box-shadow: #e2e2e2 10px 0px 10px inset;
+}
+.boxRSR{
+     -webkit-box-shadow: #e2e2e2 -10px 0px 10px inset;   
+}
+
+.border-Bottom
+{
+    border-bottom:1px dotted #e2e2e2;
+}
+
+.alignL
+{
+    text-align:left;
+}
+.alignR
+{
+    text-align:right;
+}
+.alignC
+{
+    text-align:center;
+}
+.alignJ
+{
+    text-align:justify;
+}
+.bold
+{
+    font-weight:600;
+}
+.clear
+{
+    clear:both;
+}
+
+.content-left, .content-right
+{
+       height:400px;float:left;
+}
+/* content-right
+---------------------------------------*/
+.content-right
+{
+    width:730px;
+	padding:0px 8px;
+
+}
+ .content-right ol
+    {
+        height:335px;
+	    overflow-y:scroll;
+    }
+/* theLoai Content
+---------------------------------------*/
+.content-left
+{
+	font-family: Constantia, Georgia, serif;
+	margin: 0 5px 0 0;
+    background-color:#fff;
+    padding:0px 5px;
+    overflow-y:auto;
+}
+#theLoai
+{
+	font-family: Constantia, Georgia, serif;
+	list-style-type:none!important;
+	margin: 0 5px 0 0;
+    background-color:#fff;
+   width:140px;
+   height:360px;
+   float:left;
+   padding:0px 8px;
+    overflow-y:auto;
+}
+    #theLoai li
+    {
+        line-height:24px;
+        border-bottom:1px dotted #efeeef;
+    }
+#theLoai a:link, #theLoai a:visited
+{
+	color:royalblue;
+	text-decoration: none;
+    display:block;
+}
+
+#theLoai a:hover
+{
+	color:black;
+    background-color: #F3F3F3;
+    -webkit-box-shadow: #e2e2e2 0px 2px 4px inset;
+      
+}
+
+/* album-list 
+--------------------------------------------*/
+
+ul#album-list
+{
+	list-style: none;
+	margin-left: 0px;
+}
+
+ul#album-list li
+{
+	height: 155px;
+	width: 110px;
+	float: left;
+	margin: 10px;
+	text-align: center;
+}
+ul#album-list li img
+{
+	height: 95px;
+	width: 95px;
+	
+}
+ul#album-list li a, ul#album-list li .button
+{
+	font-size: 13px;
+	float: left;
+}
+   
+ul#album-list li a span
+{
+	color: #3E3ECE;
+	font-size:0.9em;
+}
+
+.bgDRed2
+{
+        color:#fff;
+        padding-left:15px;
+        border:1px solid #e2e2e2!important;
+       -webkit-box-shadow: #e2e2e2 0px 0px 4px inset;
+        -webkit-border-radius:15px;
+        
+        background-color:#CC0000; 
+        background-image: -ms-linear-gradient(left, #CC0000 0%, #E68080 100%);
+        background-image: -o-linear-gradient(left, #CC0000 0%, #E68080 100%);
+        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #CC0000), color-stop(1, #E68080));
+        background-image: -webkit-linear-gradient(left, #CC0000 0%, #E68080 100%);
+        background-image: linear-gradient(left, #CC0000 0%, #E68080 100%);
+        
+}
+
+#list1
+{
+    list-style-type:none;
+    margin:0px auto;
+    /*display:table;*/
+    height:360px;
+    width:850px;
+    overflow-y:auto;
+    font-size:1.1em;
+}
+
+    #list1 li div
+    {
+        width:400px;
+        display:inline-block;
+        padding-top:6px;
+    }
+  
+    .title 
+    { width:810px;
+         margin:0px auto;
+        font-weight:bold;
+        
+        font-size:1.3em;
+    }
+        .title div
+        {
+             width:400px;
+        display:inline-block;
+        border-bottom:3px double #e2e2e2;
+        }
+
+a.photo  {     
+   
+ background-repeat:no-repeat;
+ -webkit-background-size:120px 100px;
+ background-position:top left;
+ width: 120px;       
+ height: 100px;       
+text-indent: -9999px; /* hides the link text*/
+display:inline-block;
+ 
+   }
+.searchForm 
+{
+    width:940px;
+    margin:4px auto!important;
+    text-align:right;
+    border:1px solid #e2e2e2;
+    -webkit-box-shadow: #e2e2e2 0px 2px 6px inset;
+    -webkit-border-radius:5px;
+    padding:6px 10px;
+    
+    
+   
+}
+.searchForm input[type="text"]
+{
+    width:350px;
+}

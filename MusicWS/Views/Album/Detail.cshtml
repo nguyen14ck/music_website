@@ -1,0 +1,56 @@
+﻿@model MusicWS.Models.Album
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<article class="boxRSL">
+        <div class="alignR">@Html.ActionLink("Trở về","Index")</div>       
+        <h2 class="border-Bottom">@ViewBag.Message</h2>
+        <fieldset class="border-Bottom">
+            <legend>&nbsp;</legend>      
+            <div class="alignR">
+                <img alt="@Model.AnhBia" src="@Url.Content("~/Photos/Album")" />
+            </div>
+
+            <div class="alignL">
+                <div class="editor-label">
+                @Html.LabelFor(model=> model.AlbumId)              
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model=>model.AlbumId) 
+            </div>
+                  
+            <div class="editor-label">
+                @Html.LabelFor(model=> model.TenAlbum)              
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model=>model.TenAlbum) 
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model=> model.NgayPhatHanh)              
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model=>model.NgayPhatHanh)  
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model=> model.GiaBan)              
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model=>model.GiaBan) 
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model=>model.GioiThieu)
+            </div>
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextAreaFor(model=>model.GioiThieu, rows:4,columns:10,htmlAttributes:new{@style="width:550px;"})
+            </div>
+        </fieldset>
+        
+        
+    </article>

@@ -1,0 +1,15 @@
+﻿@model List<MusicWS.Models.TheLoai>
+
+
+<!--Tạo list Thể Loại lấy Database từ SQL-->
+<aside class="content-left boxRSR">
+    <header class="border-Bottom">
+        <h2>@ViewBag.Message</h2>
+    </header>
+    <ul id="theLoai">
+        @foreach (var item in Model)
+        {
+            <li>@Html.ActionLink(item.TenTheLoai, "Index", "Home", new { id=item.TheLoaiId},null)</li>
+        }
+    </ul>
+</aside>

@@ -1,0 +1,6 @@
+﻿div.pager { text-align:right; border-top: 2px solid silver; 
+    padding: .5em 0 0 0; margin-top: 1em; display:block; } 
+div.pager a { font-size: 1.1em; color: #161414; text-decoration: none; 
+      padding: 0 .4em 0 .4em; } 
+div.pager a:hover { background-color: #b6ff00; } 
+div.pager a.selected { background-color: #ff6a00; color: White; } 

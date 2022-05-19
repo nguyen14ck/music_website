@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MusicWS.Models.Album>
+@{  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<article class="content-right boxRSL">
+   
+    <h2 class="borderBOrangeRed">@ViewBag.Message</h2>
+    <div class="wgStyle">
+        @using(Html.BeginForm())
+        {
+            WebGrid grid = new WebGrid(Model,rowsPerPage:5);
+            @grid.GetHtml(
+            columns: grid.Columns(
+            grid.Column("TenAlbum", header:"Tên Album"),
+            grid.Column("GiaBan", header:"Giá bán", format:p=>p.GiaBan.ToString("#,##0VNĐ"), style:"alignR" ),
+            grid.Column("NgayPhatHanh", header:"Ngày phát hành", format:p=>p.NgayPhatHanh.ToString("dd/MM/yyyy"), style:"alignC", canSort:false ),
+            grid.Column(header:"", format: p=>Html.ActionLink("Xem","Detail",new {id=p.AlbumId})),
+            grid.Column(header:"", format: p=>Html.ActionLink("Sửa","Edit",new {id=p.AlbumId},null)),
+            grid.Column(header:"", format: p=>Html.ActionLink("Huỷ","Delete",new {id=p.AlbumId},null))
+            )) 
+        }
+    </div>
+</article>

@@ -1,0 +1,64 @@
+﻿@model MusicWS.ViewModels.CartIndex
+@{    
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+<article class="boxRSL">
+    <h2 class="border-Bottom">@ViewBag.Message</h2>
+
+    <table style="margin:10px auto; width:90%;">
+        <thead><tr>
+                   <th class="alignC">STT</th>
+                   <th class="alignL" style="width:300px">Tên Album</th>
+                   <th class="alignC" style="width:70px">Số lượng</th>
+                   <th class="alignR">Đơn giá</th> 
+                   <th class="alignR">Thành tiền</th> 
+                   <th style="width:70px"></th>
+                   <th style="width:70px"></th>
+               </tr>
+        </thead>
+
+        <tbody>
+            @{int stt = 0;}
+            @foreach (var line in Model.Cart.Lines)
+            {
+                stt++;
+                <tr>
+                    <td class="alignC">@stt</td>
+                    <td>@line.Album.TenAlbum</td>
+                    @using (@Html.BeginForm("UpdateToCart", "Cart"))
+                    {
+                        <td>@Html.TextBox("SoLuong",line.SoLuong,new {@style="width:98%", @class="alignC"})</td>
+                        <td class="alignR">@line.Album.GiaBan.ToString("#,##0VNĐ")</td> 
+                        <td class="alignR">@((line.SoLuong*line.Album.GiaBan).ToString("#,##0VNĐ"))</td>
+                        <td>
+                            @Html.Hidden("AlbumId",line.Album.AlbumId)
+                            @Html.HiddenFor(x=>x.ReturnUrl)
+                            <input class="actionButton" type="submit" value="Cập nhật" />
+                         </td>
+                    }
+                    <td>
+                        @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                        {
+                            @Html.Hidden("AlbumId",line.Album.AlbumId)
+                            @Html.HiddenFor(x=>x.ReturnUrl)
+                           <input class="actionButtons" type="submit"  value="Hủy" /> 
+                        }                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6" class="alignR">Tổng cộng:</td>
+                <td class="alignR">
+                    @Model.Cart.ComputeTotal().ToString("#,##0VND")
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <p class="actionButtons alignC">
+        <a href="@Model.ReturnUrl">Tiếp tục</a>
+        @Html.ActionLink("Đặt mua","Checkout")
+    </p>
+</article>

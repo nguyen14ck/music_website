@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!--Menu: Start-->
+    <nav>
+        <ul id="menu">
+            <li>@Html.ActionLink("TheLoai","Index","TheLoai")</li>
+            <li>@Html.ActionLink("Album","About","Album")</li>
+            <li>@Html.ActionLink("TrinhBay","Contact","TrinhBay")</li>
+            <li>@Html.ActionLink("Trangchu","Index","CaSy")</li>
+        </ul>
+    </nav>
+    <!--Menu: End-->
+
+    <!--Header: Start-->
+    <header id="pageHeader">
+        <img src="~/Images/VietMusic.png" alt="" height="90" />
+    </header>
+    <!--Header: End-->
+
+    <!--body: Start-->
+    <div id="body">
+        @RenderSection("featured",required:false)
+        <section class="content-wrapper main-content clear-fix">
+        
+            @RenderBody()
+        </section>
+    </div>
+    <!--body: End-->
+
+    <!--Footer: Start-->
+    <footer id="pageFooter">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy;@DateTime.Now.Year -VNMusic ASP.NET MVC4 Appliaction</p>
+            </div>
+        </div>
+    </footer>
+    <!--Footer: End-->
+</body>
+</html>

@@ -1,0 +1,9 @@
+﻿@model MusicWS.Models.Album
+
+   @using (Html.BeginForm("AddToCart", "Cart", method: FormMethod.Post, htmlAttributes: new { @style = "float:right; display:inline;" }))
+   {
+       @Html.AntiForgeryToken()
+       @Html.HiddenFor(x=>x.AlbumId)
+       @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+       <input type="image" src="~/Images/cart.png" style="height:36px; width:42px" />
+   }
